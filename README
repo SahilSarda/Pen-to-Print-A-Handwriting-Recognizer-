@@ -1,0 +1,151 @@
+# Handwritten Notes to Digital Text Converter
+
+This project is a Flask-based web application that converts handwritten notes into digital text using OCR (Optical Character Recognition). The application supports text extraction using PaddleOCR, preprocessing for improved accuracy, and provides options to save or convert the extracted text to PDF or Word formats.
+
+---
+
+## Features
+
+- **Image Preprocessing**: Enhances the input image using techniques like grayscale conversion, resizing, adaptive histogram equalization, and thresholding.
+- **Text Extraction**: Uses PaddleOCR for accurate text detection and recognition, including angle classification.
+- **Save and Convert Options**:
+  - Save the extracted text to a `.txt` file.
+  - Convert the text to a PDF or Word document.
+- **Web Interface**: Simple and intuitive UI for uploading images and managing extracted text.
+
+---
+
+## Prerequisites
+
+- Python 3.8+
+- pip (Python package manager)
+
+---
+
+## Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-repo/handwritten-notes-to-digital-text.git
+   cd handwritten-notes-to-digital-text
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Download PaddleOCR models** (optional):
+   PaddleOCR automatically downloads required models on the first run. Ensure you have a stable internet connection.
+
+---
+
+## Usage
+
+1. **Run the application**:
+   ```bash
+   python app.py
+   ```
+
+2. **Access the application**:
+   Open your browser and navigate to `http://127.0.0.1:5000/`.
+
+3. **Features**:
+   - Upload an image containing handwritten text.
+   - View the extracted text in the browser.
+   - Save the text or convert it to PDF/Word formats.
+
+---
+
+## Project Structure
+
+```
+.
+├── app.py                 # Main Flask application
+├── templates/
+│   ├── landing.html       # Landing page template
+│   ├── upload_form.html   # Upload form template
+├── static/
+│   ├── output_files/      # Directory for generated files (PDF, Word)
+├── requirements.txt       # Required Python packages
+└── README.md              # Project documentation
+```
+
+---
+
+## Dependencies
+
+- **Flask**: Web framework for Python
+- **OpenCV**: Image processing library
+- **PaddleOCR**: OCR engine for text detection and recognition
+- **FPDF**: PDF generation library
+- **python-docx**: Word document creation library
+
+Install all dependencies with:
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## API Endpoints
+
+### `GET /`
+- Renders the upload form.
+
+### `POST /`
+- Accepts image files and extracts text using PaddleOCR.
+- Displays the extracted text.
+
+### `POST /save`
+- Saves the extracted text to a `.txt` file.
+
+### `POST /convert`
+- Converts the extracted text to PDF or Word format.
+- Downloads the generated file.
+
+---
+
+## How it Works
+
+1. **Upload Image**:
+   - Users can upload a handwritten note image.
+   
+2. **Image Preprocessing**:
+   - The uploaded image is processed to enhance text visibility for better OCR accuracy.
+
+3. **Text Extraction**:
+   - PaddleOCR detects and extracts text from the preprocessed image.
+   
+4. **Save or Convert**:
+   - Users can save the extracted text as a `.txt` file or convert it to PDF/Word formats.
+
+---
+
+## Future Enhancements
+
+- Implement user authentication (login, register, guest mode).
+- Add support for additional languages in OCR.
+- Provide a preview of the converted PDF/Word documents.
+- Deploy the application on cloud platforms like AWS or Heroku.
+
+---
+
+## Contributing
+
+Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+---
+
+## Acknowledgments
+
+- [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR): For robust OCR capabilities.
+- [Flask](https://flask.palletsprojects.com/): For powering the web application.
+- [FPDF](http://www.fpdf.org/): For PDF generation.
+- [python-docx](https://python-docx.readthedocs.io/): For Word document creation.
