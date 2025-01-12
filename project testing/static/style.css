@@ -1,0 +1,135 @@
+/* style.css */
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f7f8fc, #dde1e7);
+    background-image: url('textures/subtle-texture.png'); /* Optional texture */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Header Styles */
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #4A90E2;
+    margin-bottom: 0.5em;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* File Input Styles */
+.upload-section {
+    margin-bottom: 20px;
+}
+
+.file-input-wrapper {
+    position: relative;
+    margin: 20px 0;
+}
+
+#image_file {
+    display: none;
+}
+
+.upload-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 25px;
+    font-size: 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.upload-button:hover {
+    background-color: #2980b9;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #4A90E2;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1em;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.extract-btn {
+    margin-top: 10px;
+    background-color: #1abc9c;
+}
+
+.extract-btn:hover {
+    background-color: #16a085;
+}
+
+.download-btn {
+    background-color: #e74c3c;
+    margin-top: 15px;
+}
+
+.download-btn:hover {
+    background-color: #c0392b;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Textarea Styles */
+textarea {
+    width: 90%;
+    max-width: 100%;
+    height: auto;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    resize: none;
+    background-color: #f4f5f7;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Download Options Section */
+.download-options {
+    margin-top: 25px;
+}
+
+select {
+    padding: 8px;
+    font-size: 1em;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}

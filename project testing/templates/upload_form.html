@@ -1,0 +1,48 @@
+<!-- upload_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Image Upload and Text Extraction</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Upload Your Handwritten Notes</h1>
+            <p class="subtitle">Convert your handwritten notes to digital text in seconds.</p>
+        </header>
+
+        <section class="upload-section">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="file-input-wrapper">
+                    <input type="file" name="image_file" id="image_file" accept="image/*" required>
+                    <label for="image_file" class="upload-button">Choose Image</label>
+                </div>
+                <button type="submit" class="btn extract-btn">Upload and Extract Text</button>
+            </form>
+        </section>
+
+        {% if text %}
+        <section class="result-section">
+            <h2>Extracted Text</h2>
+            <textarea rows="10" cols="80" readonly>{{ text }}</textarea>
+            
+            <div class="download-options">
+                <h2>Download Options</h2>
+                <form method="POST" action="/convert">
+                    <input type="hidden" name="extracted_text" value="{{ text }}">
+                    <label for="format">Select format:</label>
+                    <select name="format" required>
+                        <option value="pdf">PDF</option>
+                        <option value="word">Word</option>
+                    </select>
+                    <button type="submit" class="btn download-btn">Download</button>
+                </form>
+            </div>
+        </section>
+        {% endif %}
+    </div>
+</body>
+</html>
